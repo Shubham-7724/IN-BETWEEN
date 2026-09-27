@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'DM Sans', sans-serif;
+    color: #222222;
+    background-color: #F7F3ED;
+  }
+
+  ::selection {
+    background-color: #A8B5A0;
+    color: #141414;
+  }
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F7F3ED;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D8CBB8;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A8B5A0;
+}
+
+/* Measurement grid backdrop */
+.bg-grid-pattern {
+  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(to right, rgba(34, 34, 34, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(34, 34, 34, 0.04) 1px, transparent 1px);
+}
+
+.bg-measurement-dots {
+  background-image: radial-gradient(rgba(34, 34, 34, 0.12) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+/* Subtle animation pulses */
+@keyframes caliper-pulse {
+  0%, 100% { opacity: 0.6; transform: scaleX(1); }
+  50% { opacity: 1; transform: scaleX(1.04); }
+}
+
+.animate-caliper {
+  animation: caliper-pulse 3s ease-in-out infinite;
+}
